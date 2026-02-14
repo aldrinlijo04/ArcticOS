@@ -1,0 +1,26 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+*.pdb
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Cargo.lock for libraries (keep for binaries)
+# Cargo.lock
+
+# Test and benchmark outputs
+*.profraw
+*.profdata
+
+# Documentation build
+doc/
+
+# Environment files
+.env
+.env.local
