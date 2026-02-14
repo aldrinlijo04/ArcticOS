@@ -1,4 +1,4 @@
-# ARTICOS Phase 1: GPU Runtime Scheduler Simulation
+# ARCTICOS Phase 1: GPU Runtime Scheduler Simulation
 
 A production-structured, CPU-based simulation of a GPU runtime scheduler built in Rust. ARTICOS (Arctic Operating System) is a GPU-first systems runtime, and this Phase 1 implementation models the core scheduling behaviors without requiring actual GPU hardware.
 
