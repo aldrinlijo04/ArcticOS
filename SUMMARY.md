@@ -1,4 +1,4 @@
-# ARTICOS Phase 1 - Project Summary
+# ARCTICOS Phase 1 - Project Summary
 
 ## ✅ Deliverables Complete
 
