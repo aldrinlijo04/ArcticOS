@@ -26,8 +26,14 @@ impl Ord for PriorityTask {
         match self.task.priority.cmp(&other.task.priority) {
             Ordering::Equal => {
                 // If equal priority, older task goes first (FIFO)
-                // Reverse comparison because earlier timestamp should be "greater"
-                other.task.submitted_at.cmp(&self.task.submitted_at)
+                // Reverse comparison because earlier timestamp should be "greater" in max-heap
+                match other.task.submitted_at.cmp(&self.task.submitted_at) {
+                    Ordering::Equal => {
+                        // If timestamps equal (fast submission), use task ID as tiebreaker
+                        other.task.id.cmp(&self.task.id)
+                    }
+                    ord => ord,
+                }
             }
             other => other,
         }
