@@ -44,6 +44,7 @@ pub mod executor;
 pub mod metrics;
 pub mod fifo;
 pub mod priority;
+pub mod gpu;
 
 // Re-export common types for convenience
 pub use task::{Task, TaskId, Priority};
