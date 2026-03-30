@@ -1,18 +1,18 @@
 {
-  "started_at_unix_nanos": 1774892142861969000,
+  "started_at_unix_nanos": 1774892601976460000,
   "total_runs": 72,
-  "passed_runs": 24,
-  "failed_runs": 48,
+  "passed_runs": 42,
+  "failed_runs": 30,
   "baseline_used": true,
-  "best_run_id": "run-1774892065355718000-fifo-priority-flood-s8-seed41",
-  "best_score": 4.50545949189838,
-  "recommendation": "Promote candidate 'run-1774892065355718000-fifo-priority-flood-s8-seed41' (fifo/priority-flood, slots=8, seed=41)",
+  "best_run_id": "run-1774892524480799000-fifo-priority-flood-s8-seed41",
+  "best_score": 4.551864305139111,
+  "recommendation": "Promote candidate 'run-1774892524480799000-fifo-priority-flood-s8-seed41' (fifo/priority-flood, slots=8, seed=41)",
   "top_runs": [
-    "run-1774892065355718000-fifo-priority-flood-s8-seed41",
-    "run-1774892065857677000-fifo-priority-flood-s8-seed42",
-    "run-1774892066359473000-fifo-priority-flood-s8-seed43",
-    "run-1774892141857157000-priority-priority-flood-s8-seed41",
-    "run-1774892142358821000-priority-priority-flood-s8-seed42"
+    "run-1774892524480799000-fifo-priority-flood-s8-seed41",
+    "run-1774892524982405000-fifo-priority-flood-s8-seed42",
+    "run-1774892525483715000-fifo-priority-flood-s8-seed43",
+    "run-1774892600972487000-priority-priority-flood-s8-seed41",
+    "run-1774892601473986000-priority-priority-flood-s8-seed42"
   ],
   "llm_analysis": null
 }

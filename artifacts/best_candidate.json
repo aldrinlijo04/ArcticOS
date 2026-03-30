@@ -1,6 +1,6 @@
 {
-  "run_id": "run-1774892065355718000-fifo-priority-flood-s8-seed41",
-  "created_at_unix_nanos": 1774892065355718000,
+  "run_id": "run-1774892524480799000-fifo-priority-flood-s8-seed41",
+  "created_at_unix_nanos": 1774892524480799000,
   "config": {
     "scheduler": "fifo",
     "workload": "priority-flood",
@@ -41,17 +41,17 @@
     {
       "gate": "Gate B: Starvation Non-Increase",
       "passed": true,
-      "detail": "candidate=0 baseline=0 (must be <=)"
+      "detail": "candidate=0 baseline=38 (must be <=)"
     },
     {
       "gate": "Gate C: Max Wait <= 1.15x Baseline",
       "passed": true,
-      "detail": "candidate=450 baseline_cap=1235"
+      "detail": "candidate=450 baseline_cap=2546"
     },
     {
       "gate": "Gate D: Throughput >= 0.95x Baseline",
       "passed": true,
-      "detail": "candidate=160.000 baseline_floor=32.285"
+      "detail": "candidate=160.000 baseline_floor=32.716"
     },
     {
       "gate": "Gate E: Recommendation-Only Mode",
