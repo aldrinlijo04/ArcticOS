@@ -1,0 +1,68 @@
+{
+  "run_id": "run-1774891919299810000-fifo-priority-flood-s4-seed41",
+  "created_at_unix_nanos": 1774891919299810000,
+  "config": {
+    "scheduler": "fifo",
+    "workload": "priority-flood",
+    "slots": 4,
+    "tasks": 40,
+    "max_iterations": 200000,
+    "seed": 41
+  },
+  "aggregate": {
+    "total_tasks": 40,
+    "avg_wait_time_ms": 225.0,
+    "avg_execution_time_ms": 50.0,
+    "avg_total_time_ms": 275.0,
+    "max_wait_time_ms": 450,
+    "min_wait_time_ms": 0,
+    "starved_tasks": 0,
+    "total_simulation_time_ms": 500,
+    "throughput_tasks_per_sec": 80.0
+  },
+  "per_priority_wait": [
+    {
+      "priority": 1,
+      "avg_wait_ms": 25.0,
+      "count": 8
+    },
+    {
+      "priority": 10,
+      "avg_wait_ms": 275.0,
+      "count": 32
+    }
+  ],
+  "gates": [
+    {
+      "gate": "Gate A: Valid Run Artifact",
+      "passed": true,
+      "detail": "Run completed and metrics snapshot was generated"
+    },
+    {
+      "gate": "Gate B: Starvation Non-Increase",
+      "passed": true,
+      "detail": "candidate=0 baseline=0 (must be <=)"
+    },
+    {
+      "gate": "Gate C: Max Wait <= 1.15x Baseline",
+      "passed": true,
+      "detail": "candidate=450 baseline_cap=1235"
+    },
+    {
+      "gate": "Gate D: Throughput >= 0.95x Baseline",
+      "passed": true,
+      "detail": "candidate=80.000 baseline_floor=32.285"
+    },
+    {
+      "gate": "Gate E: Recommendation-Only Mode",
+      "passed": true,
+      "detail": "Autonomous layer only writes artifacts/reports and never mutates scheduler code"
+    }
+  ],
+  "insights": [
+    "Throughput: 80.000 tasks/sec across 40 tasks",
+    "Wait profile: avg=225.00ms max=450ms starved=0",
+    "Priority spread: p1 avg_wait=25.00ms -> p10 avg_wait=275.00ms",
+    "All active quality gates passed"
+  ]
+}

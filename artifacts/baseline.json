@@ -1,0 +1,98 @@
+{
+  "run_id": "run-1774891888878303000-fifo-mixed-s4-seed42",
+  "created_at_unix_nanos": 1774891888878303000,
+  "config": {
+    "scheduler": "fifo",
+    "workload": "mixed",
+    "slots": 4,
+    "tasks": 40,
+    "max_iterations": 200000,
+    "seed": 42
+  },
+  "aggregate": {
+    "total_tasks": 40,
+    "avg_wait_time_ms": 499.9,
+    "avg_execution_time_ms": 113.525,
+    "avg_total_time_ms": 613.425,
+    "max_wait_time_ms": 1074,
+    "min_wait_time_ms": 0,
+    "starved_tasks": 0,
+    "total_simulation_time_ms": 1177,
+    "throughput_tasks_per_sec": 33.98470688190314
+  },
+  "per_priority_wait": [
+    {
+      "priority": 0,
+      "avg_wait_ms": 540.0,
+      "count": 6
+    },
+    {
+      "priority": 1,
+      "avg_wait_ms": 407.0,
+      "count": 4
+    },
+    {
+      "priority": 3,
+      "avg_wait_ms": 483.5,
+      "count": 2
+    },
+    {
+      "priority": 4,
+      "avg_wait_ms": 219.25,
+      "count": 4
+    },
+    {
+      "priority": 5,
+      "avg_wait_ms": 713.2857142857143,
+      "count": 7
+    },
+    {
+      "priority": 6,
+      "avg_wait_ms": 417.5,
+      "count": 4
+    },
+    {
+      "priority": 7,
+      "avg_wait_ms": 521.5,
+      "count": 6
+    },
+    {
+      "priority": 8,
+      "avg_wait_ms": 662.0,
+      "count": 1
+    },
+    {
+      "priority": 9,
+      "avg_wait_ms": 593.3333333333334,
+      "count": 3
+    },
+    {
+      "priority": 10,
+      "avg_wait_ms": 350.0,
+      "count": 3
+    }
+  ],
+  "gates": [
+    {
+      "gate": "Gate A: Valid Run Artifact",
+      "passed": true,
+      "detail": "Run completed and metrics snapshot was generated"
+    },
+    {
+      "gate": "Gate B/C/D: Baseline Comparison",
+      "passed": true,
+      "detail": "No baseline provided; comparison gates skipped"
+    },
+    {
+      "gate": "Gate E: Recommendation-Only Mode",
+      "passed": true,
+      "detail": "Autonomous layer only writes artifacts/reports and never mutates scheduler code"
+    }
+  ],
+  "insights": [
+    "Throughput: 33.985 tasks/sec across 40 tasks",
+    "Wait profile: avg=499.90ms max=1074ms starved=0",
+    "Priority spread: p0 avg_wait=540.00ms -> p10 avg_wait=350.00ms",
+    "All active quality gates passed"
+  ]
+}

@@ -235,6 +235,89 @@ impl Scheduler for MyScheduler {
 - Multi-GPU support
 - Hardware profiling integration
 
+## Agentic AI Tickets
+
+This section tracks implementation work for adding a free, local-first agentic AI workflow on top of the scheduler simulator.
+
+- [x] TKT-001: Define agentic architecture and acceptance gates
+- [x] TKT-002: Add experiment artifact schema (JSON)
+- [x] TKT-003: Add `articos-agentic` CLI harness for deterministic experiment runs
+- [x] TKT-004: Add workload generators (uniform, mixed, bursty, priority-flood)
+- [x] TKT-005: Add baseline comparison and gate checks (throughput, wait, starvation)
+- [x] TKT-006: Add persistent run history storage (SQLite)
+- [x] TKT-007: Add recommendation mode (no auto code changes)
+- [x] TKT-008: Add multi-run sweep mode (parameter grid)
+- [x] TKT-009: Add nightly regression runner (CI/local cron friendly)
+- [x] TKT-010: Add report generation (markdown + JSON summary)
+- [x] TKT-011: Add local LLM integration (Ollama) as optional analyzer
+- [x] TKT-012: Add multi-agent split (orchestrator, analyst, proposer, gatekeeper)
+
+### Agentic AI Acceptance Gates
+
+- `Gate A`: Run completes and metrics artifact is valid JSON
+- `Gate B`: Candidate starvation count must not exceed baseline
+- `Gate C`: Candidate max wait must be <= 1.15x baseline max wait
+- `Gate D`: Candidate throughput must be >= 0.95x baseline throughput
+
+## Agentic AI CLI (Autonomous Layer)
+
+Run a baseline artifact:
+
+```bash
+cargo run -p articos-agentic -- \
+    --mode single \
+    --scheduler fifo \
+    --workload mixed \
+    --slots 4 \
+    --tasks 80 \
+    --seed 42 \
+    --output artifacts/baseline.json
+```
+
+Run the autonomous orchestrator sweep (with baseline gates + SQLite history + reports):
+
+```bash
+cargo run -p articos-agentic -- \
+    --mode autonomous \
+    --tasks 80 \
+    --schedulers fifo,priority \
+    --workloads uniform,mixed,bursty,priority-flood \
+    --slots-list 2,4,8 \
+    --seeds 41,42,43 \
+    --baseline artifacts/baseline.json \
+    --history-db artifacts/agentic_runs.db \
+    --output artifacts/best_candidate.json \
+    --report-json artifacts/autonomous_report.json \
+    --report-md artifacts/autonomous_report.md
+```
+
+Optional local LLM analysis via Ollama:
+
+```bash
+cargo run -p articos-agentic -- \
+    --mode autonomous \
+    --tasks 80 \
+    --schedulers fifo,priority \
+    --workloads mixed,priority-flood \
+    --slots-list 4,8 \
+    --seeds 41,42,43 \
+    --baseline artifacts/baseline.json \
+    --ollama-model qwen2.5-coder:7b
+```
+
+Nightly regression mode (non-zero exit if no candidate passes):
+
+```bash
+bash agentic/nightly_regression.sh
+```
+- `Gate E`: Recommendation-only mode by default (no autonomous code edits)
+
+### Current Implementation Status
+
+- Active ticket: `TKT-003`
+- Next ticket: `TKT-004`
+- Working mode: Recommendation-only, local-first, free tooling
+
 ## 🧪 Testing Strategy
 
 - **Unit tests**: Individual component behavior (in each module)

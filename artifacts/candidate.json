@@ -1,0 +1,68 @@
+{
+  "run_id": "run-1774890898846527000",
+  "created_at_unix_nanos": 1774890898846527000,
+  "config": {
+    "scheduler": "priority",
+    "workload": "priority-flood",
+    "slots": 4,
+    "tasks": 80,
+    "max_iterations": 200000,
+    "seed": 7
+  },
+  "aggregate": {
+    "total_tasks": 80,
+    "avg_wait_time_ms": 475.1125,
+    "avg_execution_time_ms": 50.0,
+    "avg_total_time_ms": 525.1625,
+    "max_wait_time_ms": 951,
+    "min_wait_time_ms": 0,
+    "starved_tasks": 36,
+    "total_simulation_time_ms": 1001,
+    "throughput_tasks_per_sec": 79.92007992007993
+  },
+  "per_priority_wait": [
+    {
+      "priority": 1,
+      "avg_wait_ms": 875.5625,
+      "count": 16
+    },
+    {
+      "priority": 10,
+      "avg_wait_ms": 375.0,
+      "count": 64
+    }
+  ],
+  "gates": [
+    {
+      "gate": "Gate A: Valid Run Artifact",
+      "passed": true,
+      "detail": "Run completed and metrics snapshot was generated"
+    },
+    {
+      "gate": "Gate B: Starvation Non-Increase",
+      "passed": true,
+      "detail": "candidate=36 baseline=40 (must be <=)"
+    },
+    {
+      "gate": "Gate C: Max Wait <= 1.15x Baseline",
+      "passed": true,
+      "detail": "candidate=951 baseline_cap=2636"
+    },
+    {
+      "gate": "Gate D: Throughput >= 0.95x Baseline",
+      "passed": true,
+      "detail": "candidate=79.920 baseline_floor=30.907"
+    },
+    {
+      "gate": "Gate E: Recommendation-Only Mode",
+      "passed": true,
+      "detail": "This CLI does not mutate scheduler code; it only emits artifacts"
+    }
+  ],
+  "insights": [
+    "Throughput: 79.920 tasks/sec across 80 tasks",
+    "Wait profile: avg=475.11ms max=951ms starved=36",
+    "Priority spread: p1 avg_wait=875.56ms -> p10 avg_wait=375.00ms",
+    "All active quality gates passed"
+  ]
+}

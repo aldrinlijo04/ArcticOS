@@ -1,0 +1,18 @@
+{
+  "started_at_unix_nanos": 1774891940323087000,
+  "total_runs": 32,
+  "passed_runs": 16,
+  "failed_runs": 16,
+  "baseline_used": true,
+  "best_run_id": "run-1774891919299810000-fifo-priority-flood-s4-seed41",
+  "best_score": 2.15145949189838,
+  "recommendation": "Promote candidate 'run-1774891919299810000-fifo-priority-flood-s4-seed41' (fifo/priority-flood, slots=4, seed=41)",
+  "top_runs": [
+    "run-1774891919299810000-fifo-priority-flood-s4-seed41",
+    "run-1774891919801567000-fifo-priority-flood-s4-seed42",
+    "run-1774891939820839000-priority-priority-flood-s4-seed41",
+    "run-1774891940321912000-priority-priority-flood-s4-seed42",
+    "run-1774891915979870000-fifo-bursty-s4-seed41"
+  ],
+  "llm_analysis": null
+}
