@@ -1,0 +1,22 @@
+[workspace]
+resolver = "2"
+members = [
+    "scheduler",
+    "control-plane",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["ArcticOS Team"]
+license = "MIT"
+
+[workspace.dependencies]
+# Shared dependencies across workspace
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+cust = "0.3"
+anyhow = "1"
