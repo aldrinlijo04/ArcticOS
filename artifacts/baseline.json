@@ -1,75 +1,80 @@
 {
-  "run_id": "run-1774891888878303000-fifo-mixed-s4-seed42",
-  "created_at_unix_nanos": 1774891888878303000,
+  "run_id": "run-1774892293107243000-fifo-mixed-s4-seed42",
+  "created_at_unix_nanos": 1774892293107243000,
   "config": {
     "scheduler": "fifo",
     "workload": "mixed",
     "slots": 4,
-    "tasks": 40,
+    "tasks": 80,
     "max_iterations": 200000,
     "seed": 42
   },
   "aggregate": {
-    "total_tasks": 40,
-    "avg_wait_time_ms": 499.9,
-    "avg_execution_time_ms": 113.525,
-    "avg_total_time_ms": 613.425,
-    "max_wait_time_ms": 1074,
+    "total_tasks": 80,
+    "avg_wait_time_ms": 1075.575,
+    "avg_execution_time_ms": 113.5125,
+    "avg_total_time_ms": 1189.1375,
+    "max_wait_time_ms": 2214,
     "min_wait_time_ms": 0,
-    "starved_tasks": 0,
-    "total_simulation_time_ms": 1177,
-    "throughput_tasks_per_sec": 33.98470688190314
+    "starved_tasks": 38,
+    "total_simulation_time_ms": 2323,
+    "throughput_tasks_per_sec": 34.438226431338784
   },
   "per_priority_wait": [
     {
       "priority": 0,
-      "avg_wait_ms": 540.0,
-      "count": 6
+      "avg_wait_ms": 617.0,
+      "count": 7
     },
     {
       "priority": 1,
-      "avg_wait_ms": 407.0,
+      "avg_wait_ms": 1131.6666666666667,
+      "count": 9
+    },
+    {
+      "priority": 2,
+      "avg_wait_ms": 1789.75,
       "count": 4
     },
     {
       "priority": 3,
-      "avg_wait_ms": 483.5,
-      "count": 2
+      "avg_wait_ms": 699.3333333333334,
+      "count": 3
     },
     {
       "priority": 4,
-      "avg_wait_ms": 219.25,
-      "count": 4
+      "avg_wait_ms": 847.5555555555555,
+      "count": 9
     },
     {
       "priority": 5,
-      "avg_wait_ms": 713.2857142857143,
-      "count": 7
+      "avg_wait_ms": 1088.4545454545455,
+      "count": 11
     },
     {
       "priority": 6,
-      "avg_wait_ms": 417.5,
-      "count": 4
+      "avg_wait_ms": 1233.8,
+      "count": 10
     },
     {
       "priority": 7,
-      "avg_wait_ms": 521.5,
-      "count": 6
+      "avg_wait_ms": 1084.8181818181818,
+      "count": 11
     },
     {
       "priority": 8,
-      "avg_wait_ms": 662.0,
-      "count": 1
+      "avg_wait_ms": 1577.5,
+      "count": 8
     },
     {
       "priority": 9,
-      "avg_wait_ms": 593.3333333333334,
-      "count": 3
+      "avg_wait_ms": 897.25,
+      "count": 4
     },
     {
       "priority": 10,
-      "avg_wait_ms": 350.0,
-      "count": 3
+      "avg_wait_ms": 551.0,
+      "count": 4
     }
   ],
   "gates": [
@@ -90,9 +95,9 @@
     }
   ],
   "insights": [
-    "Throughput: 33.985 tasks/sec across 40 tasks",
-    "Wait profile: avg=499.90ms max=1074ms starved=0",
-    "Priority spread: p0 avg_wait=540.00ms -> p10 avg_wait=350.00ms",
+    "Throughput: 34.438 tasks/sec across 80 tasks",
+    "Wait profile: avg=1075.58ms max=2214ms starved=38",
+    "Priority spread: p0 avg_wait=617.00ms -> p10 avg_wait=551.00ms",
     "All active quality gates passed"
   ]
 }

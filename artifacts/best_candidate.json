@@ -1,16 +1,16 @@
 {
-  "run_id": "run-1774891919299810000-fifo-priority-flood-s4-seed41",
-  "created_at_unix_nanos": 1774891919299810000,
+  "run_id": "run-1774892524480799000-fifo-priority-flood-s8-seed41",
+  "created_at_unix_nanos": 1774892524480799000,
   "config": {
     "scheduler": "fifo",
     "workload": "priority-flood",
-    "slots": 4,
-    "tasks": 40,
+    "slots": 8,
+    "tasks": 80,
     "max_iterations": 200000,
     "seed": 41
   },
   "aggregate": {
-    "total_tasks": 40,
+    "total_tasks": 80,
     "avg_wait_time_ms": 225.0,
     "avg_execution_time_ms": 50.0,
     "avg_total_time_ms": 275.0,
@@ -18,18 +18,18 @@
     "min_wait_time_ms": 0,
     "starved_tasks": 0,
     "total_simulation_time_ms": 500,
-    "throughput_tasks_per_sec": 80.0
+    "throughput_tasks_per_sec": 160.0
   },
   "per_priority_wait": [
     {
       "priority": 1,
       "avg_wait_ms": 25.0,
-      "count": 8
+      "count": 16
     },
     {
       "priority": 10,
       "avg_wait_ms": 275.0,
-      "count": 32
+      "count": 64
     }
   ],
   "gates": [
@@ -41,17 +41,17 @@
     {
       "gate": "Gate B: Starvation Non-Increase",
       "passed": true,
-      "detail": "candidate=0 baseline=0 (must be <=)"
+      "detail": "candidate=0 baseline=38 (must be <=)"
     },
     {
       "gate": "Gate C: Max Wait <= 1.15x Baseline",
       "passed": true,
-      "detail": "candidate=450 baseline_cap=1235"
+      "detail": "candidate=450 baseline_cap=2546"
     },
     {
       "gate": "Gate D: Throughput >= 0.95x Baseline",
       "passed": true,
-      "detail": "candidate=80.000 baseline_floor=32.285"
+      "detail": "candidate=160.000 baseline_floor=32.716"
     },
     {
       "gate": "Gate E: Recommendation-Only Mode",
@@ -60,7 +60,7 @@
     }
   ],
   "insights": [
-    "Throughput: 80.000 tasks/sec across 40 tasks",
+    "Throughput: 160.000 tasks/sec across 80 tasks",
     "Wait profile: avg=225.00ms max=450ms starved=0",
     "Priority spread: p1 avg_wait=25.00ms -> p10 avg_wait=275.00ms",
     "All active quality gates passed"
